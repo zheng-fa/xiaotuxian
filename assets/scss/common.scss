@@ -1,0 +1,245 @@
+// 各个页面相同样式表使用 头 尾部
+// 版心
+.wrapper {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+// 快捷导航
+.shortcut {
+  height: 52px;
+  background-color: #333;
+
+  .wrapper {
+    height: 52px;
+
+    ul {
+      float: right;
+    }
+
+    li {
+      float: left;
+      line-height: 52px;
+      &:last-child a {
+        border-right: 0;
+      }
+
+      a {
+        padding: 0 16px;
+        border-right: 1px solid #666;
+        // line-height: 52px;
+        font-size: 14px;
+        color: #dcdcdc;
+        // display: flex;
+        // align-items: center;
+
+        span {
+          display: inline-block;
+          margin-right: 8px;
+          width: 11px;
+          height: 16px;
+          background-image: url(../images/sprites.png);
+          background-position: -160px -70px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+// 头部
+.header {
+  margin: 30px auto;
+  height: 70px;
+
+  .logo {
+    float: left;
+    margin-right: 40px;
+    width: 207px;
+    height: 70px;
+
+    // 搜索引擎优化
+    h1 {
+      width: 207px;
+      height: 70px;
+      // 让h1里的字看不见
+      font-size: 0;
+
+      a {
+        display: block;
+        width: 207px;
+        height: 70px;
+        background-image: url(../images/logo.png);
+        background-size: contain;
+      }
+    }
+  }
+
+  .nav {
+    float: left;
+
+    li {
+      float: left;
+      margin-right: 48px;
+
+      a {
+        line-height: 70px;
+        padding-bottom: 7px;
+        &:hover {
+          color: #27ba9b;
+          border-bottom: 1px solid #27ba9b;
+        }
+      }
+    }
+  }
+
+  .search {
+    position: relative;
+    float: left;
+    margin-top: 24px;
+    margin-left: 34px;
+    width: 172px;
+    height: 30px;
+    border-bottom: 1px solid #e7e7e7;
+
+    input {
+      padding-left: 30px;
+      width: 172px;
+      height: 29px;
+      &::placeholder {
+        color: #ccc;
+      }
+    }
+
+    span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      // display: inline-block;
+      width: 18px;
+      height: 18px;
+      background-image: url(../images/sprites.png);
+      background-position: -79px -69px;
+    }
+  }
+
+  .car {
+    position: relative;
+    float: right;
+    margin: 28px 15px;
+
+    a {
+      display: inline-grid;
+      width: 23px;
+      height: 23px;
+      background-image: url(../images/sprites.png);
+      background-position: -120px -69px;
+    }
+
+    span {
+      // 绝对定位，盒子具备行内块特点
+      position: absolute;
+      right: -12px;
+      top: -5px;
+      width: 20px;
+      height: 15px;
+      background-color: #e26237;
+      border-radius: 8px;
+      text-align: center;
+      line-height: 15px;
+      font-size: 13px;
+      color: #fff;
+    }
+  }
+}
+
+// 版权
+.footer {
+  height: 342px;
+  background-color: #333;
+
+  .wrapper {
+    width: 1393px;
+
+    .top {
+      padding-top: 59px;
+      padding-left: 135px;
+      height: 175px;
+      border-bottom: 3px solid #434343;
+
+      li {
+        position: relative;
+        float: left;
+        margin-right: 300px;
+        width: 195px;
+        height: 58px;
+        line-height: 58px;
+
+        span {
+          margin-left: 77px;
+          font-style: 28px;
+          color: #fff;
+        }
+
+        // &:first-child {
+        &::before {
+          position: absolute;
+          left: 0;
+          top: 0;
+          content: "";
+          width: 58px;
+          height: 58px;
+          vertical-align: middle;
+          background-image: url(../images/sprites.png);
+          background-position: 0 0;
+        }
+        // }
+
+        &:nth-child(2) {
+          &::before {
+            // position: absolute;
+            // left: 0;
+            // top: 0;
+            // content: "";
+            // width: 58px;
+            // height: 58px;
+            // vertical-align: middle;
+            // background-image: url(../images/sprites.png);
+            background-position: -131px 0;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+          &::before {
+            // position: absolute;
+            // left: 0;
+            // top: 0;
+            // content: "";
+            // width: 58px;
+            // height: 58px;
+            // vertical-align: middle;
+            // background-image: url(../images/sprites.png);
+            background-position: -65px 0;
+          }
+        }
+      }
+    }
+
+    .bottom {
+      padding-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      color: #999;
+
+      a {
+        font-size: 14px;
+        color: #999;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
