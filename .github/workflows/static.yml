@@ -1,0 +1,31 @@
+name: 部署静态资源
+
+on:
+  # 当 master 分支有推送时执行
+  push:
+    branches: ["master"]
+    
+  # 允许手动运行此工作流程
+  workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限以允许部署到 GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 切换分支
+        uses: actions/checkout@v4
+        
+      - name: 上传文件
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './'
+          
+      - name: 部署到 GitHub Pages
+        uses: actions/deploy-pages@v4
